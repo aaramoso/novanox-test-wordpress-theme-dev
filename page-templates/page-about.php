@@ -10,7 +10,7 @@ get_header();
 $hero_bg_id  = yyb_option( 'yyb_about_hero_bg', '' );
 $hero_bg_url = $hero_bg_id
     ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero' )
-    : get_template_directory_uri() . '/images/about-hero-bg.png';
+    : get_template_directory_uri() . '/images/about-hero-bg.webp';
 ?>
 
 <!-- ========================================================

@@ -12,7 +12,7 @@ $hero_subheading = yyb_option( 'yyb_hero_subheading', 'YYBunker is a Brooklyn-ba
 $hero_bg_id      = yyb_option( 'yyb_hero_bg', '' );
 $hero_bg_url     = $hero_bg_id
     ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero' )
-    : get_template_directory_uri() . '/images/hero-bg.gif';
+    : get_template_directory_uri() . '/images/hero-bg.webp';
 ?>
 
 <!-- ========================================================
@@ -100,32 +100,32 @@ $hero_bg_url     = $hero_bg_id
                 [
                     'title'    => 'Oval Duct',
                     'modifier' => 'oval',
-                    'default'  => 'fab-oval.png',
+                    'default'  => 'fab-oval.webp',
                 ],
                 [
                     'title'    => 'Spiral Round Duct',
                     'modifier' => 'spiral',
-                    'default'  => 'fab-spiral.png',
+                    'default'  => 'fab-spiral.webp',
                 ],
                 [
                     'title'    => 'Rectangular Duct',
                     'modifier' => 'rect',
-                    'default'  => 'fab-rect.png',
+                    'default'  => 'fab-rect.webp',
                 ],
                 [
                     'title'    => 'Black Iron Sheet Metal Duct',
                     'modifier' => 'black-iron',
-                    'default'  => 'fab-blackiron.png',
+                    'default'  => 'fab-blackiron.webp',
                 ],
                 [
                     'title'    => 'Aluminum Sheet Metal Duct',
                     'modifier' => 'aluminum',
-                    'default'  => 'fab-aluminum.png',
+                    'default'  => 'fab-aluminum.webp',
                 ],
                 [
                     'title'    => 'Custom Duct & Specialty Fabrication',
                     'modifier' => 'custom',
-                    'default'  => 'fab-custom.png',
+                    'default'  => 'fab-custom.webp',
                 ],
             ];
             foreach ( $fab_products as $prod ) :
@@ -259,7 +259,7 @@ $hero_bg_url     = $hero_bg_id
     $bottom_bg_id  = yyb_option( 'yyb_bottom_bg', '' );
     $bottom_bg_url = $bottom_bg_id
         ? wp_get_attachment_image_url( $bottom_bg_id, 'full' )
-        : get_template_directory_uri() . '/images/bottom-hero.png'; ?>
+        : get_template_directory_uri() . '/images/bottom-hero.webp'; ?>
     <img src="<?php echo esc_url( $bottom_bg_url ); ?>" alt="<?php esc_attr_e( 'YYBunker workshop team', 'yy-bunker' ); ?>" class="bottom-hero__img">
     <div class="bottom-hero__overlay"></div>
     <div class="bottom-hero__placeholder-pattern" aria-hidden="true"></div>

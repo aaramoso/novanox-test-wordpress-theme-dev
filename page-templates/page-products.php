@@ -49,12 +49,12 @@ $hero_bg_url = $hero_bg_id
         <div class="duct-systems__grid">
             <?php
             $ducts = [
-                [ 'title' => 'Oval Duct',                    'img_key' => 'yyb_prod_img_oval',      'modifier' => 'oval',       'default' => 'fab-oval.png' ],
-                [ 'title' => 'Spiral Round Duct',            'img_key' => 'yyb_prod_img_spiral',    'modifier' => 'spiral',     'default' => 'fab-spiral.png' ],
-                [ 'title' => 'Rectangular Duct',             'img_key' => 'yyb_prod_img_rect',      'modifier' => 'rect',       'default' => 'fab-rect.png' ],
-                [ 'title' => 'Black Iron Sheet Metal Duct',  'img_key' => 'yyb_prod_img_blackiron', 'modifier' => 'black-iron', 'default' => 'fab-blackiron.png' ],
-                [ 'title' => 'Aluminum Sheet Metal Duct',    'img_key' => 'yyb_prod_img_aluminum',  'modifier' => 'aluminum',   'default' => 'fab-aluminum.png' ],
-                [ 'title' => 'Custom & Specialty Fabrication','img_key' => 'yyb_prod_img_custom',   'modifier' => 'custom',     'default' => 'fab-custom.png' ],
+                [ 'title' => 'Oval Duct',                    'img_key' => 'yyb_prod_img_oval',      'modifier' => 'oval',       'default' => 'fab-oval.webp' ],
+                [ 'title' => 'Spiral Round Duct',            'img_key' => 'yyb_prod_img_spiral',    'modifier' => 'spiral',     'default' => 'fab-spiral.webp' ],
+                [ 'title' => 'Rectangular Duct',             'img_key' => 'yyb_prod_img_rect',      'modifier' => 'rect',       'default' => 'fab-rect.webp' ],
+                [ 'title' => 'Black Iron Sheet Metal Duct',  'img_key' => 'yyb_prod_img_blackiron', 'modifier' => 'black-iron', 'default' => 'fab-blackiron.webp' ],
+                [ 'title' => 'Aluminum Sheet Metal Duct',    'img_key' => 'yyb_prod_img_aluminum',  'modifier' => 'aluminum',   'default' => 'fab-aluminum.webp' ],
+                [ 'title' => 'Custom & Specialty Fabrication','img_key' => 'yyb_prod_img_custom',   'modifier' => 'custom',     'default' => 'fab-custom.webp' ],
             ];
             foreach ( $ducts as $duct ) :
                 $img_id  = yyb_option( $duct['img_key'], '' );
