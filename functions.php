@@ -4,7 +4,7 @@
  *
  * @package YY_Bunker
  * @author  Anthony Ramoso
- * @version 1.0.0
+ * @version 1.2.2
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 // THEME CONSTANTS
 // ============================================================
 
-define( 'YYB_VERSION',   '1.0.0' );
+define( 'YYB_VERSION',   '1.2.2' );
 define( 'YYB_DIR',       get_template_directory() );
 define( 'YYB_URI',       get_template_directory_uri() );
 define( 'YYB_ASSETS',    YYB_URI . '/assets' );
@@ -475,7 +475,7 @@ function yyb_register_cpts() {
             'menu_name'          => __( 'Products',        'yy-bunker' ),
         ],
         'public'      => true,
-        'has_archive' => true,
+        'has_archive' => false,
         'supports'    => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ],
         'menu_icon'   => 'dashicons-products',
         'rewrite'     => [ 'slug' => 'products' ],
@@ -492,7 +492,7 @@ function yyb_register_cpts() {
             'menu_name'     => __( 'Services',       'yy-bunker' ),
         ],
         'public'      => true,
-        'has_archive' => true,
+        'has_archive' => false,
         'supports'    => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
         'menu_icon'   => 'dashicons-hammer',
         'rewrite'     => [ 'slug' => 'services' ],

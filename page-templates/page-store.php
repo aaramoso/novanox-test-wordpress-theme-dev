@@ -8,7 +8,9 @@
 get_header();
 
 $hero_bg_id  = yyb_option( 'yyb_store_hero_bg', '' );
-$hero_bg_url = $hero_bg_id ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero' ) : '';
+$hero_bg_url = $hero_bg_id
+    ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero' )
+    : get_template_directory_uri() . '/images/hero-store-optimized.jpg';
 ?>
 
 <!-- ========================================================
@@ -16,9 +18,7 @@ $hero_bg_url = $hero_bg_id ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero
      ======================================================== -->
 <section class="store-hero" id="store-hero" aria-label="Store Hero">
     <div class="store-hero__bg">
-        <?php if ( $hero_bg_url ) : ?>
-            <img src="<?php echo esc_url( $hero_bg_url ); ?>" alt="" aria-hidden="true">
-        <?php endif; ?>
+        <img src="<?php echo esc_url( $hero_bg_url ); ?>" alt="" aria-hidden="true">
         <div class="store-hero__overlay"></div>
         <div class="store-hero__grid-pattern" aria-hidden="true"></div>
     </div>
@@ -28,7 +28,7 @@ $hero_bg_url = $hero_bg_id ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero
             <h1 class="store-hero__heading animate-fade-up" style="animation-delay:0.1s;">
                 Everything You Need<br>
                 For The Job.<br>
-                <span class="text-accent">Right Next To The Shop.</span>
+                Right Next To The Shop.
             </h1>
             <p class="store-hero__sub animate-fade-up" style="animation-delay:0.25s;">
                 <?php esc_html_e( 'Located Right Alongside Our Fabrication Facility In Brooklyn, The YYBunker Supply Store Is A Fully Stocked HVAC Supply Counter Serving Mechanical Contractors, HVAC Technicians, And Tradespeople. Pick Up What You Need — When You Need It — Without The Wait.', 'yy-bunker' ); ?>
@@ -61,15 +61,11 @@ $hero_bg_url = $hero_bg_id ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero
             <div class="store-about__image">
                 <?php
                 $about_img_id  = yyb_option( 'yyb_store_about_img', '' );
-                $about_img_url = $about_img_id ? wp_get_attachment_image_url( $about_img_id, 'yyb-card' ) : '';
-                if ( $about_img_url ) :
+                $about_img_url = $about_img_id
+                    ? wp_get_attachment_image_url( $about_img_id, 'yyb-card' )
+                    : get_template_directory_uri() . '/images/about-whatwedo.jpg';
                 ?>
                     <img src="<?php echo esc_url( $about_img_url ); ?>" alt="<?php esc_attr_e( 'YYBunker Supply Store', 'yy-bunker' ); ?>">
-                <?php else : ?>
-                    <div class="store-about__image-placeholder">
-                        <?php echo yyb_icon( 'package', 56 ); ?>
-                    </div>
-                <?php endif; ?>
             </div>
 
         </div>
@@ -94,61 +90,71 @@ $hero_bg_url = $hero_bg_id ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero
                     'title'   => 'Duct Fittings & Connectors',
                     'img_key' => 'yyb_store_cat_fittings',
                     'mod'     => 'fittings',
+                    'default' => 'ducting-fittings-&-connectors.png',
                 ],
                 [
                     'title'   => 'Flexible Duct',
                     'img_key' => 'yyb_store_cat_flex',
                     'mod'     => 'flex',
+                    'default' => 'flexible-duct.png',
                 ],
                 [
                     'title'   => 'Insulation Products',
                     'img_key' => 'yyb_store_cat_insulation',
                     'mod'     => 'insulation',
+                    'default' => 'insulations-products.png',
                 ],
                 [
                     'title'   => 'Grilles, Diffusers & Registers',
                     'img_key' => 'yyb_store_cat_grilles',
                     'mod'     => 'grilles',
+                    'default' => 'grilles-diffusers-&-registers.png',
                 ],
                 [
                     'title'   => 'Tape, Sealant & Adhesives',
                     'img_key' => 'yyb_store_cat_tape',
                     'mod'     => 'tape',
+                    'default' => 'tape-sealant-&-adhesives.png',
                 ],
                 [
                     'title'   => 'Hangers, Supports & Strapping',
                     'img_key' => 'yyb_store_cat_hangers',
                     'mod'     => 'hangers',
+                    'default' => 'hangers-supports-&-strapping.png',
                 ],
                 [
                     'title'   => 'Sheet Metal Accessories',
                     'img_key' => 'yyb_store_cat_sheetmetal',
                     'mod'     => 'sheetmetal',
+                    'default' => 'sheet-metal-accessories.png',
                 ],
                 [
                     'title'   => 'HVAC Tools & Equipment',
                     'img_key' => 'yyb_store_cat_tools',
                     'mod'     => 'tools',
+                    'default' => 'hvac-tools-&-equipment.png',
                 ],
                 [
                     'title'   => 'Filters',
                     'img_key' => 'yyb_store_cat_filters',
                     'mod'     => 'filters',
+                    'default' => 'filters.png',
                 ],
                 [
                     'title'   => 'Miscellaneous HVAC Supplies',
                     'img_key' => 'yyb_store_cat_misc',
                     'mod'     => 'misc',
+                    'default' => 'miscellaneous-hvac-supplies.png',
                 ],
             ];
             foreach ( $categories as $cat ) :
                 $img_id  = yyb_option( $cat['img_key'], '' );
-                $img_url = $img_id ? wp_get_attachment_image_url( $img_id, 'yyb-card' ) : '';
+                $img_url = $img_id
+                    ? wp_get_attachment_image_url( $img_id, 'yyb-card' )
+                    : get_template_directory_uri() . '/images/' . $cat['default'];
             ?>
             <div class="store-cat-card store-cat-card--<?php echo esc_attr( $cat['mod'] ); ?>">
-                <?php if ( $img_url ) : ?>
-                    <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $cat['title'] ); ?>" class="store-cat-card__bg-img">
-                <?php endif; ?>
+                <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $cat['title'] ); ?>" class="store-cat-card__bg-img">
                 <div class="store-cat-card__overlay"></div>
                 <div class="store-cat-card__body">
                     <h3 class="store-cat-card__title"><?php echo esc_html( $cat['title'] ); ?></h3>
@@ -267,15 +273,11 @@ $hero_bg_url = $hero_bg_id ? wp_get_attachment_image_url( $hero_bg_id, 'yyb-hero
             <div class="store-info__image">
                 <?php
                 $info_img_id  = yyb_option( 'yyb_store_info_img', '' );
-                $info_img_url = $info_img_id ? wp_get_attachment_image_url( $info_img_id, 'yyb-card' ) : '';
-                if ( $info_img_url ) :
+                $info_img_url = $info_img_id
+                    ? wp_get_attachment_image_url( $info_img_id, 'yyb-card' )
+                    : get_template_directory_uri() . '/images/about-facility-bg.jpg';
                 ?>
                     <img src="<?php echo esc_url( $info_img_url ); ?>" alt="<?php esc_attr_e( 'YYBunker Store Location', 'yy-bunker' ); ?>">
-                <?php else : ?>
-                    <div class="store-info__image-placeholder">
-                        <?php echo yyb_icon( 'map', 56 ); ?>
-                    </div>
-                <?php endif; ?>
             </div>
 
         </div>
